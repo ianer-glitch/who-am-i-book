@@ -1,0 +1,6 @@
+.yellow{
+    background-color: rgb(229, 229, 190);
+    min-width: 200px;
+    min-height: 200px;
+    padding: 1rem;
+}
