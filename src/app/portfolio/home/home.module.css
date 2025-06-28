@@ -1,5 +1,6 @@
 .notebook {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 800px;
   height: 100%;
   position: relative;  
   background-attachment: local;

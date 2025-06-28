@@ -10,7 +10,7 @@ export const PostIt = (props : IPostIt) =>{
    
 
     return(
-        <div className={style[props.color]}>
+        <div className={`${style[props.color]} ${style['container']}`}>
             {props.children}
         </div>
     )
