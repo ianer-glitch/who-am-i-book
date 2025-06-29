@@ -1,0 +1,18 @@
+.config-button{
+    color:white;
+    background-color:gray;
+    border-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem;
+    border-radius: 40px 20px 30px 12px / 20px 30px 16px 24px;
+    transition: all .2s ease-in-out;
+    font-size: 1.5rem;
+    
+}
+
+.config-button:is(:active,:hover){
+    transform: rotate(4deg) scale(1.2);
+    cursor:pointer    
+}

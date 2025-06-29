@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono,Londrina_Shadow } from "next/font/google";
 import "./globals.css";
+import 'primeicons/primeicons.css'
 
 const londrinaShadow = Londrina_Shadow({
   variable:"--font-londrina-shadow",

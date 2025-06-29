@@ -1,4 +1,4 @@
-import { PostIt } from "@/shared/components/postIt/postIt"
+import { PostIt } from "@/shared/components/atoms/postIt/postIt"
 
 
 export const ProfilePostIt = () => {
