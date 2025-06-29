@@ -38,3 +38,19 @@ p {
 label {
   font-size: var(--label-font-size);
 }
+
+.light-theme{
+  --bg-color:#fff;
+  
+  --bg-config-button:gray;
+
+  --bg-post-it-yellow:yellow;
+}
+
+.dark-theme{
+  --bg-color:rgb(161, 127, 127);
+  
+  --bg-config-button:gray;
+
+  --bg-post-it-yellow:yellow;
+}
