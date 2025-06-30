@@ -1,5 +1,5 @@
 'use client'
-import { useThemeStore } from "@/shared/state/ThemeStore"
+import { useThemeStore } from "@/shared/state/useThemeStore"
 import { ConfigButton } from "../../atoms/configButton/ConfigButton"
 
 export const ThemeButtons = () =>{
