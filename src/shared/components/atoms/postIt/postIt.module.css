@@ -9,6 +9,6 @@
 }
 
 .yellow{
-    background-color: rgb(229, 229, 190);
-    border-color:rgb(229, 229, 190)
+    background-color:var(--bg-post-it-yellow);
+    border-color:var(--bg-post-it-yellow)
 }
