@@ -2,6 +2,7 @@
 import { ConfigButton } from "@/shared/components/atoms/configButton/ConfigButton";
 import { ProfilePostIt } from "../components/profilePostIt/profilePostIt";
 import style from "./home.module.css"
+import { LanguageButtons } from "@/shared/components/molecules/languageButtons/LanguageButtons";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
     <ConfigButton>
       <i className="pi pi-pencil"></i>
     </ConfigButton>
+    <LanguageButtons/>
     </div>
     </div>
   );
