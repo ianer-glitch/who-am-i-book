@@ -1,11 +1,11 @@
-import { createStore } from "zustand";
+import { create } from "zustand";
 
 type ThemeStore = {
-    currenctTheme:string
-}
+  currentTheme: "light" | "dark" ;
+  setCurrentTheme: (value: "light" | "dark") => void;
+};
 
-export const ThemeStore = createStore<ThemeStore>(){
-    
-    
-        
-}
+export const useThemeStore = create<ThemeStore>((set) => ({
+  currentTheme: "light",
+  setCurrentTheme: (value) => set({ currentTheme: value }),
+}));
