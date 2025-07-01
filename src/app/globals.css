@@ -45,6 +45,10 @@ label {
   --bg-config-button:gray;
 
   --bg-post-it-yellow:rgb(210, 210, 120);
+  --bg-post-it-red:rgb(216, 80, 141);
+  --bg-post-it-blue:rgb(120, 192, 210);
+  --bg-post-it-green:rgb(138, 228, 124);
+  --bg-post-it-pink:rgb(235, 154, 232);
 }
 
 .dark{
@@ -52,5 +56,9 @@ label {
   
   --bg-config-button:gray;
 
-  --bg-post-it-yellow:rgb(224, 224, 116);
+  --bg-post-it-yellow:rgb(210, 210, 120);
+  --bg-post-it-red:rgb(216, 80, 141);
+  --bg-post-it-blue:rgb(120, 192, 210);
+  --bg-post-it-green:rgb(138, 228, 124);
+  --bg-post-it-pink:rgb(235, 154, 232);
 }

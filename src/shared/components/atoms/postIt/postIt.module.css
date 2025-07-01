@@ -12,3 +12,23 @@
     background-color:var(--bg-post-it-yellow);
     border-color:var(--bg-post-it-yellow)
 }
+
+.red{
+    background-color:var(--bg-post-it-red);
+    border-color:var(--bg-post-it-red)
+}
+
+.green{
+    background-color:var(--bg-post-it-green);
+    border-color:var(--bg-post-it-green)
+}
+
+.blue{
+    background-color:var(--bg-post-it-blue);
+    border-color:var(--bg-post-it-blue)
+}
+
+.pink{
+    background-color:var(--bg-post-it-pink);
+    border-color:var(--bg-post-it-pink)
+}
