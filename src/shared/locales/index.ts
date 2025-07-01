@@ -7,8 +7,8 @@ i18next
     .use(initReactI18next)
     .init({
         resources,
-        lng: 'ptBR',
-        fallbackLng: 'ptBR',
+        lng: 'ptBr',
+        fallbackLng: 'ptBr',
         interpolation: {
             escapeValue: false,
         },
