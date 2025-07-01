@@ -1,6 +1,6 @@
 'use client'
 
-import { Geist, Geist_Mono,Londrina_Shadow } from "next/font/google";
+import { Geist, Geist_Mono,Londrina_Shadow,Nunito} from "next/font/google";
 import "./globals.css";
 import 'primeicons/primeicons.css'
 import { useThemeStore } from "@/shared/state/useThemeStore";
@@ -11,6 +11,10 @@ const londrinaShadow = Londrina_Shadow({
   subsets:["latin"],
   weight:"400",
 });
+
+const nunito = Nunito({
+  variable:"--font-nunito"
+}) 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +41,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${londrinaShadow.variable} ${store.currentTheme} antialiased  `}
+        className={`
+            ${geistSans.variable} 
+            ${geistMono.variable}
+            ${nunito.variable} 
+            ${londrinaShadow.variable} 
+            ${store.currentTheme} 
+            antialiased  `}
         >
         <Header/>
         {children}

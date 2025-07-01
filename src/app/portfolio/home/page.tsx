@@ -11,9 +11,9 @@ export default function Home() {
 
   return (
   <div className={style['notebook']}>
-    <section className="absolute right-0 p-4 top-0 gap-6 flex items-center justify-start flex-col w-full h-full">
+    <section className="absolute right-0 p-4 top-0 gap-5 flex items-center justify-start flex-col w-full h-full">
       <ProfilePostIt/>
-      <p>{t("homeAbout")}</p>
+      <p style={{fontFamily:"var(--font-nunito)"}}>{t("homeAbout")}</p>
       <ProjectsPostItList/>
     </section>
   </div>
