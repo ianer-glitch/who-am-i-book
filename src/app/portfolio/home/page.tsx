@@ -10,12 +10,12 @@ export default function Home() {
   const {t} = useTranslation()
 
   return (
-   <div className={style['notebook']}>
-    <div className="absolute  right-0 p-4  top-0 flex items-center justify-start flex-col w-full h-full">
-    <ProfilePostIt/>
-    <p>{t("homeAbout")}</p>
-    <ProjectsPostItList/>
-    </div>
-    </div>
+  <div className={style['notebook']}>
+    <section className="absolute right-0 p-4 top-0 gap-6 flex items-center justify-start flex-col w-full h-full">
+      <ProfilePostIt/>
+      <p>{t("homeAbout")}</p>
+      <ProjectsPostItList/>
+    </section>
+  </div>
   );
 }

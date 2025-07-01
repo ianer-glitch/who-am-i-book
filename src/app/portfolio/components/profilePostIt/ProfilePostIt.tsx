@@ -6,7 +6,7 @@ export const ProfilePostIt = () => {
     const {t} = useTranslation()
 return (
     <PostIt className="w-full" color="yellow">
-        <h1>{t("profilePostItTitle")}</h1>
+        <h1 style={{fontFamily:"var(--font-londrina-shadow)"}}>{t("profilePostItTitle")}</h1>
     </PostIt>
 )    
 }
