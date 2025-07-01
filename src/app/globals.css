@@ -56,7 +56,7 @@ label {
 }
 
 .dark{
-  --bg-color:rgb(161, 127, 127);
+  --bg-color:rgb(101, 93, 93);
   
   --bg-config-button:gray;
 
@@ -65,4 +65,8 @@ label {
   --bg-post-it-blue:rgb(120, 192, 210);
   --bg-post-it-green:rgb(138, 228, 124);
   --bg-post-it-pink:rgb(235, 154, 232);
+}
+
+body{
+  background-color: var(--bg-color);
 }

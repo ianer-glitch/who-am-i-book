@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
    <div className={style['notebook']}>
-    <div className="absolute top-0 flex items-center justify-start flex-col w-full h-full">
+    <div className="absolute  right-0 p-4  top-0 flex items-center justify-start flex-col w-full h-full">
     <ProfilePostIt/>
     <p>{t("homeAbout")}</p>
     <ProjectsPostItList/>

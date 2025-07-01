@@ -5,8 +5,8 @@
   position: relative;  
   background-attachment: local;
   background-image:
-  linear-gradient(to right, white 4ch, transparent 4ch),
-  repeating-linear-gradient(white, white 1.5em, #ccc 1.5em, #ccc 1.52em);
+  linear-gradient(to right, var(--bg-color) 0, transparent 0),
+  repeating-linear-gradient(var(--bg-color), var(--bg-color) 1.5em, #ccc 1.5em, #ccc 1.52em);
   background-size: 100% 1.52em;
   line-height: 1.5em;
   padding: 0.5em;
