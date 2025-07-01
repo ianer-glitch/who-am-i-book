@@ -1,7 +1,7 @@
 import { enUs } from "./enUs";
 import { ptBr } from "./ptBr";
 
-export const LanguageResources = {
+export const resources = {
     ptBr :{
         translation: ptBr
     },

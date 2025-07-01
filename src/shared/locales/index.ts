@@ -1,12 +1,12 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { LanguageResources } from './languages';
+import { resources } from './languages';
 
 
 i18next
     .use(initReactI18next)
     .init({
-        LanguageResources,
+        resources,
         lng: 'ptBR',
         fallbackLng: 'ptBR',
         interpolation: {
@@ -14,7 +14,7 @@ i18next
         },
     })
 
-export type LanguageResourcesType = keyof typeof LanguageResources;
+export type LanguageResourcesType = keyof typeof resources;
 
 export {
     useTranslation,
