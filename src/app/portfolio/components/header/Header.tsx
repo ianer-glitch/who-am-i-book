@@ -4,7 +4,7 @@ import { ThemeButtons } from "@/shared/components/molecules/themeButtons/ThemeBu
 export const Header = () => {
     return (
         <header className="w-full h-fit p-4">
-            <div className="w-full h-fit flex items-center justify-between">
+            <div className="w-full h-fit flex gap-4  flex-col items-end justify-center">
                 <LanguageButtons/>
                 <ThemeButtons/>
             </div>
