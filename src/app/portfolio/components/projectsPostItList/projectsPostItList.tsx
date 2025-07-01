@@ -1,4 +1,6 @@
+import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
 import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/projectPostIt";
+import { useState } from "react";
 
 export const ProjectsPostItList = () => {
   const projects: IProjectPostIt[] = [
@@ -11,19 +13,39 @@ export const ProjectsPostItList = () => {
       repoFrontEndLink: ".",
       color:"blue"
     },
+     {
+      description: "a",
+      title: "b",
+      desingLink: ".",
+      publishedLink: ".",
+      repoBackEndLink: ".",
+      repoFrontEndLink: ".",
+      color:"pink"
+    },
   ];
 
+  const [currentProject,setCurrentProject] = useState(projects[0])
+
+  const handleProjectChange = (pro : IProjectPostIt) => {
+    setCurrentProject(pro)
+  }
+
   return (
-    <ul>
-      {projects.map((m, index) => (
-        <li key={index}>
-          <ProjectPostIt 
-            title={m.title} 
-            description={m.description}
-            color={m.color} 
-        />
-        </li>
-      ))}
-    </ul>
+    <div className="flex items-start justify-center w-full">
+      
+      <ProjectPostIt 
+        className="w-full h-72"
+        title={currentProject.title} 
+        description={currentProject.description}
+        color={currentProject.color} 
+    />
+      <ul>
+        {projects.map((m, index) => (
+          <li onClick={() => handleProjectChange(m)} key={index}>
+            <PostIt color={m.color} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };

@@ -1,6 +1,5 @@
 .container{
-    min-width: 200px;
-    min-height: 200px;
+    
     padding: 1rem;
     border: 4px solid;
     box-shadow: 5px 10px 15px 1px rgb(113, 111, 111);

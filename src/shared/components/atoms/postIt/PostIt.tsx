@@ -1,6 +1,6 @@
 import style from './postIt.module.css'
 export interface IPostIt{
-    children : React.ReactNode
+    children? : React.ReactNode
     color : "yellow" | "red" | "blue" | "green" | "pink",
     className?:string
 }
