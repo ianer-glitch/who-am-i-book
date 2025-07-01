@@ -1,3 +1,5 @@
 export const ptBr = {
-    title : "olá"
+    profilePostItTitle : "Olá",
+    homeAbout : "texto",
+    
 }

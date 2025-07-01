@@ -1,3 +1,4 @@
 export const enUs = {
-    title:"hello"
+    profilePostItTitle : "Hello",
+    homeAbout : "text",
 }
