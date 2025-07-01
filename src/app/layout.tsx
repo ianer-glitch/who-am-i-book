@@ -4,6 +4,7 @@ import { Geist, Geist_Mono,Londrina_Shadow } from "next/font/google";
 import "./globals.css";
 import 'primeicons/primeicons.css'
 import { useThemeStore } from "@/shared/state/useThemeStore";
+import { Header } from "./portfolio/components/Header/Header";
 
 const londrinaShadow = Londrina_Shadow({
   variable:"--font-londrina-shadow",
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${londrinaShadow.variable} ${store.currentTheme} antialiased`}
       >
+        <Header/>
         {children}
       </body>
     </html>
