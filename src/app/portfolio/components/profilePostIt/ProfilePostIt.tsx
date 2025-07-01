@@ -1,4 +1,4 @@
-import { LinkedInButton } from "@/shared/components/atoms/linkedInButton/LinkedInButton"
+import { LinkedInButton } from "@/shared/components/molecules/linkedInButton/LinkedInButton"
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt"
 import { useTranslation } from "@/shared/locales"
 
