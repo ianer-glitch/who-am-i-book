@@ -5,47 +5,137 @@ import { useTranslation } from "@/shared/locales";
 
 export const useExperience = () => {
   const [experiences, setExperiences] = useState([] as IExperience[]);
-  const {currentLanguage} = useTranslation()
+  const { currentLanguage } = useTranslation();
 
   const experienceByLanguage: Record<keyof typeof resources, IExperience[]> = {
     ptBr: [
       {
-        title:"Server-side",
-        experiences:[".NET (2.2, 3.1, 5, 6, 8, 9)","C#","RabbitMq","LinQ","Dapper","Entity Framework","SQL","Google Protobuf","XUnity","Docker"]
+        title: "Back-end",
+        experiences: [
+          ".NET (2.2, 3.1, 5, 6, 8, 9)",
+          "C#",
+          "RabbitMQ",
+          "LINQ",
+          "Dapper",
+          "Entity Framework",
+          "SQL",
+          "Google Protobuf",
+          "XUnit",
+          "Docker",
+          "Kubernetes",
+        ],
       },
       {
-        title:"Client-side",
-        experiences:["HTML","CSS","Typescript","VueJS","AngularJs","React","Tailwind","HTML semântico"]
+        title: "Front-end",
+        experiences: [
+          "HTML5 (semântico)",
+          "CSS",
+          "Tailwind CSS",
+          "TypeScript",
+          "Vue.js",
+          "React",
+          "Angular",
+        ],
       },
       {
-        title:"Cloud & CI / CD",
-        experiences:["GitHub","Gitlab","Azure","Microsoft Azure DevOps"]
+        title: "Cloud & CI/CD",
+        experiences: ["GitHub Actions", "GitLab CI", "Azure", "Azure DevOps"],
       },
       {
-        title:"Arquiteturas",
-        experiences:["MVC","MVVM","Hexagonal","Limpa","CQRS","Microsserviços"]
+        title: "Arquiteturas",
+        experiences: [
+          "Model-View-Controller (MVC)",
+          "Model-View-ViewModel (MVVM)",
+          "Arquitetura Hexagonal",
+          "Arquitetura Limpa",
+          "CQRS",
+          "Microsserviços",
+        ],
       },
       {
-        title:"Design Patterns",
-        experiences:["Facade","Adapter","Repository","Unit Of Work","Command Pattern","Política de Re-tentativa","Aggregator"]
+        title: "Design Patterns",
+        experiences: [
+          "Facade",
+          "Adapter",
+          "Repository",
+          "Unit of Work",
+          "Command Pattern",
+          "Retry Policy",
+          "Aggregator",
+        ],
       },
       {
-        title:"Em Estudo",
-        experiences:["ReactJs","NextJs"]
+        title: "Atualmente estudando",
+        experiences: ["React.js", "Next.js"],
       },
     ],
+
     enUs: [
       {
-        title:"Server-side",
-        experiences:[".NET (2.2, 3.1, 5, 6, 8, 9)","C#","RabbitMq","LinQ","Dapper","Entity Framework","SQL","Google Protobuf","XUnity","Docker","Kubernetes"]
+        title: "Back-end",
+        experiences: [
+          ".NET (2.2, 3.1, 5, 6, 8, 9)",
+          "C#",
+          "RabbitMQ",
+          "LINQ",
+          "Dapper",
+          "Entity Framework",
+          "SQL",
+          "Google Protobuf",
+          "XUnit",
+          "Docker",
+          "Kubernetes",
+        ],
+      },
+      {
+        title: "Front-end",
+        experiences: [
+          "HTML5 (semantic)",
+          "CSS",
+          "Tailwind CSS",
+          "TypeScript",
+          "Vue.js",
+          "React",
+          "Angular",
+        ],
+      },
+      {
+        title: "Cloud & CI/CD",
+        experiences: ["GitHub Actions", "GitLab CI", "Azure", "Azure DevOps"],
+      },
+      {
+        title: "Architectures",
+        experiences: [
+          "Model-View-Controller (MVC)",
+          "Model-View-ViewModel (MVVM)",
+          "Hexagonal Architecture",
+          "Clean Architecture",
+          "CQRS",
+          "Microservices",
+        ],
+      },
+      {
+        title: "Design Patterns",
+        experiences: [
+          "Facade",
+          "Adapter",
+          "Repository",
+          "Unit of Work",
+          "Command Pattern",
+          "Retry Policy",
+          "Aggregator",
+        ],
+      },
+      {
+        title: "Currently Learning",
+        experiences: ["React.js", "Next.js"],
       },
     ],
   };
 
-  useEffect(()=>{
-    setExperiences(experienceByLanguage[currentLanguage])
+  useEffect(() => {
+    setExperiences(experienceByLanguage[currentLanguage]);
+  }, [currentLanguage]);
 
-  },[currentLanguage])
-
-  return{ experiences }
+  return { experiences };
 };
