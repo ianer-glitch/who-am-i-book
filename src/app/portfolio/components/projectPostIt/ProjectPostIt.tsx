@@ -40,7 +40,7 @@ export const ProjectPostIt = (props: IProjectPostIt) => {
           {props?.tecnologies?.map((m, key) => (
             <li key={key}>
               <span>
-                <p className="bg-white !text-black p-2">{m}</p>
+                <p style={{fontFamily:"var(--font-love-you)"}} className="bg-white !text-black p-2">{m}</p>
               </span>
             </li>
           ))}

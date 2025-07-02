@@ -13,7 +13,7 @@ export const IconLinkButton = (props:IIconLinkButton) => {
     return (
     <button onClick={openLinkNewTab} className={`${props.className}  ${styles['icon-link-button']}`}>
             <i className={`${props.icon} ${props.iconColor} text-2xl  `}></i>
-            {props.text && <p className={props.iconColor}>{props.text}</p>}
+            {props.text && <p className={props.iconColor} style={{fontFamily:"var(--font-love-you)"}}>{props.text}</p>}
         </button>
     )
 }

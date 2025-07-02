@@ -9,6 +9,6 @@
   repeating-linear-gradient(var(--bg-color), var(--bg-color) 1.5em, var(--color-book-lines) 1.5em, var(--color-book-lines) 1.52em);
   background-size: 100% 1.52em;
   line-height: 1.5em;
-  padding: 0.5em;
-  font-family: "Courier New", monospace;
+  padding: 0.25em 1rem;
+  
 }
