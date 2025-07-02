@@ -10,14 +10,34 @@ export const useExperience = () => {
   const experienceByLanguage: Record<keyof typeof resources, IExperience[]> = {
     ptBr: [
       {
-        title:"Client-Side",
-        experiences:["Vue"]
+        title:"Server-side",
+        experiences:[".NET (2.2, 3.1, 5, 6, 8, 9)","C#","RabbitMq","LinQ","Dapper","Entity Framework","SQL","Google Protobuf","XUnity","Docker"]
+      },
+      {
+        title:"Client-side",
+        experiences:["HTML","CSS","Typescript","VueJS","AngularJs","React","Tailwind","HTML semântico"]
+      },
+      {
+        title:"Cloud & CI / CD",
+        experiences:["GitHub","Gitlab","Azure","Microsoft Azure DevOps"]
+      },
+      {
+        title:"Arquiteturas",
+        experiences:["MVC","MVVM","Hexagonal","Limpa","CQRS","Microsserviços"]
+      },
+      {
+        title:"Design Patterns",
+        experiences:["Facade","Adapter","Repository","Unit Of Work","Command Pattern","Política de Re-tentativa","Aggregator"]
+      },
+      {
+        title:"Em Estudo",
+        experiences:["ReactJs","NextJs"]
       },
     ],
     enUs: [
       {
-        title:"Client-Side",
-        experiences:["VueJS"]
+        title:"Server-side",
+        experiences:[".NET (2.2, 3.1, 5, 6, 8, 9)","C#","RabbitMq","LinQ","Dapper","Entity Framework","SQL","Google Protobuf","XUnity","Docker","Kubernetes"]
       },
     ],
   };

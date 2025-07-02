@@ -7,7 +7,7 @@ export const ThemeButtons = () =>{
     
    
     return(
-        <ul className="flex items-center justify-between gap-2">
+        <ul className="flex items-end justify-end gap-2">
             <li>
                 <ConfigButton onClick={()=>setCurrentTheme('light')} >
                     <i className="pi pi-sun"></i>

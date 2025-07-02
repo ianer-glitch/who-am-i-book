@@ -9,8 +9,6 @@ export const ProjectsPostItList = () => {
 
   const {projects} = useProjects()
   const [index,setIndex] = useState(0)
-  
-  
 
   type ProjectColor = IProjectPostIt["color"]
 
@@ -40,11 +38,8 @@ export const ProjectsPostItList = () => {
     <div className="flex items-start justify-center w-full">
       
       <ProjectPostIt 
-        className="w-full h-72"
-        title={projectsToShow[index]?.title} 
-        description={projectsToShow[index]?.description}
-        color={projectsToShow[index]?.color} 
-    />
+        {...projectsToShow[index]}
+      />
       <ul>
         {projectsToShow.map((m, index) => (
           <li onClick={() => handleProjectChange(index)} key={index}>

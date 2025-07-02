@@ -19,7 +19,7 @@ html,body{
   --h1-font-size: clamp(2rem, 3vh, 2.4rem);
   --h2-font-size: clamp(1.4rem, 2.4vh, 1.8rem);
   --h3-font-size: clamp(1.2rem, 2vh, 1.4rem);
-  --p-font-size: clamp(0.9rem, 1.8vh, 1.2rem);
+  --p-font-size: clamp(0.9rem, 1.9vh, 1.2rem);
   --label-font-size: clamp(0.7rem, 1.4vh, 0.9rem);
 }
 
@@ -43,28 +43,40 @@ label {
   font-size: var(--label-font-size);
 }
 
+h1,h2,h3,h4,p,label{
+  color:var(--color-text)
+}
+
 .light{
   --bg-color:#fff;
   
   --bg-config-button:gray;
 
-  --bg-post-it-yellow:rgb(210, 210, 120);
+  --bg-post-it-yellow:#F3FA8F;
   --bg-post-it-red:rgb(216, 80, 141);
-  --bg-post-it-blue:rgb(120, 192, 210);
-  --bg-post-it-green:rgb(138, 228, 124);
-  --bg-post-it-pink:rgb(235, 154, 232);
+  --bg-post-it-blue:#B6EFF3;
+  --bg-post-it-green:#DFFEC3;
+  --bg-post-it-pink:#F5C8ED;
+
+  --color-book-lines: #b3d1db;
+  --color-text:#000;
 }
 
-.dark{
-  --bg-color:rgb(101, 93, 93);
-  
-  --bg-config-button:gray;
 
-  --bg-post-it-yellow:rgb(210, 210, 120);
-  --bg-post-it-red:rgb(216, 80, 141);
-  --bg-post-it-blue:rgb(120, 192, 210);
-  --bg-post-it-green:rgb(138, 228, 124);
-  --bg-post-it-pink:rgb(235, 154, 232);
+.dark{
+ --bg-color: #2b2a33; 
+
+  --bg-config-button: #2c2c2c; 
+
+  --bg-post-it-yellow: #b4a700; 
+  --bg-post-it-red: #b83b6f; 
+  --bg-post-it-blue: #4dbdc7; 
+  --bg-post-it-green: #84c98a; 
+  --bg-post-it-pink: #c477b9; 
+
+  --color-book-lines: #5a7a85; 
+
+   --color-text:#fff;
 }
 
 body{

@@ -11,12 +11,12 @@ export const useProjects = () => {
   const projectsByLanguage: Record<keyof typeof resources, IProject[]> = {
     ptBr: [
       {
-        description: "a",
-        title: "b",
-        desingLink: ".",
-        publishedLink: ".",
-        repoBackEndLink: ".",
-        repoFrontEndLink: ".",
+        title: "My Geladeira",
+        description: "Uma inciativa sustententávle que ajuda pessoas a gerenciarem a comida da geladeira com inteligência artifical. Foi realizado como TCC do meu MBA em Engenharia de Software",
+        desingLink: "a",
+        publishedLink: "a",
+        repoBackEndLink: "a",
+        repoFrontEndLink: "a",
       },
       {
         description: "a",
