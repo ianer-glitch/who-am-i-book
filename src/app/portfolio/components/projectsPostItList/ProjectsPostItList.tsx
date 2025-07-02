@@ -1,31 +1,12 @@
+'use client'
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
 import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/ProjectPostIt";
-import { useState } from "react";
+import { useProjectList } from "./useProjectList";
 
 export const ProjectsPostItList = () => {
-  const projects: IProjectPostIt[] = [
-    {
-      description: "a",
-      title: "b",
-      desingLink: ".",
-      publishedLink: ".",
-      repoBackEndLink: ".",
-      repoFrontEndLink: ".",
-      color:"blue"
-    },
-     {
-      description: "a",
-      title: "b",
-      desingLink: ".",
-      publishedLink: ".",
-      repoBackEndLink: ".",
-      repoFrontEndLink: ".",
-      color:"pink"
-    },
-  ];
 
-  const [currentProject,setCurrentProject] = useState(projects[0])
-
+  const {projects,currentProject,setCurrentProject} = useProjectList()
+  
   const handleProjectChange = (pro : IProjectPostIt) => {
     setCurrentProject(pro)
   }

@@ -17,7 +17,10 @@ export function useTranslation(){
     async function changeLanguage (lang :keyof typeof resources ){
         i18n.changeLanguage(lang)
     }
+
+    const currentLanguage : keyof typeof resources = i18n.language as keyof typeof resources
+
     return {
-        t,changeLanguage
+        t,changeLanguage, currentLanguage
     }
 }
