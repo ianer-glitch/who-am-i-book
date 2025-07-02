@@ -3,7 +3,7 @@
 import { useTranslation } from "@/shared/locales";
 import { ProfilePostIt } from "../components/profilePostIt/ProfilePostIt";
 import style from "./home.module.css"
-import { ProjectsPostItList } from "../components/projectsPostItList/projectsPostItList";
+import { ProjectsPostItList } from "../components/projectsPostItList/ProjectsPostItList";
 
 export default function Home() {
 

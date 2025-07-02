@@ -1,5 +1,5 @@
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
-import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/projectPostIt";
+import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/ProjectPostIt";
 import { useState } from "react";
 
 export const ProjectsPostItList = () => {
