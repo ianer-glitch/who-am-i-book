@@ -4,6 +4,7 @@ import { useTranslation } from "@/shared/locales";
 import { ProfilePostIt } from "../components/profilePostIt/ProfilePostIt";
 import style from "./home.module.css"
 import { ProjectsPostItList } from "../components/projectsPostItList/ProjectsPostItList";
+import { ExperiencesPostIt } from "../components/experiencesPostIt/ExperiencesPostIt";
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
       <ProfilePostIt/>
       <p style={{fontFamily:"var(--font-nunito)"}}>{t("homeAbout")}</p>
       <ProjectsPostItList/>
+      <ExperiencesPostIt/>
     </section>
   </div>
   );
