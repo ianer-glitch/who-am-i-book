@@ -1,24 +1,14 @@
 import { useTranslation } from "@/shared/locales";
-import { IProjectPostIt } from "../projectPostIt/ProjectPostIt";
 import { useEffect, useState } from "react";
 import { resources } from "@/shared/locales/languages";
+import { IProject } from "../../domain/IProject";
 
-export const useProjectList = () => {
+export const useProjects = () => {
   const { currentLanguage } = useTranslation();
 
-  const [projects, setProjects] = useState([] as IProjectPostIt[]);
+  const [projects, setProjects] = useState([] as IProject[]);
 
-  const [currentProject, setCurrentProject] = useState({
-    description: "",
-    title: "",
-    desingLink: "",
-    publishedLink: "",
-    repoBackEndLink: "",
-    repoFrontEndLink: "",
-    color: "yellow",
-  } as IProjectPostIt);
-
-  const projectsByLanguage: Record<keyof typeof resources, IProjectPostIt[]> = {
+  const projectsByLanguage: Record<keyof typeof resources, IProject[]> = {
     ptBr: [
       {
         description: "a",
@@ -27,7 +17,6 @@ export const useProjectList = () => {
         publishedLink: ".",
         repoBackEndLink: ".",
         repoFrontEndLink: ".",
-        color: "blue",
       },
       {
         description: "a",
@@ -36,7 +25,6 @@ export const useProjectList = () => {
         publishedLink: ".",
         repoBackEndLink: ".",
         repoFrontEndLink: ".",
-        color: "pink",
       },
     ],
     enUs: [
@@ -47,7 +35,6 @@ export const useProjectList = () => {
         publishedLink: ".",
         repoBackEndLink: ".",
         repoFrontEndLink: ".",
-        color: "blue",
       },
       {
         description: "a",
@@ -56,15 +43,13 @@ export const useProjectList = () => {
         publishedLink: ".",
         repoBackEndLink: ".",
         repoFrontEndLink: ".",
-        color: "pink",
       },
     ],
   };
 
   useEffect(() => {
     setProjects(projectsByLanguage[currentLanguage]);
-    setCurrentProject(projectsByLanguage[currentLanguage][0]);
   }, [currentLanguage]);
 
-  return { projects, currentProject, setCurrentProject };
+  return { projects };
 };

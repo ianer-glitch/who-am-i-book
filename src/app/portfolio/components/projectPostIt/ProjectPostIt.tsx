@@ -9,9 +9,8 @@ export interface IProjectPostIt {
     desingLink?:string,
     color : "yellow" | "red" | "blue" | "green" | "pink",
     className? :string
-
-    
 }
+
 export const ProjectPostIt = (props : IProjectPostIt) =>{
     return(
         <PostIt className={props.className} color={props.color}>

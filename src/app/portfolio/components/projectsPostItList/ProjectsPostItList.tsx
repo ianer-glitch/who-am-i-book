@@ -1,28 +1,53 @@
 'use client'
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
 import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/ProjectPostIt";
-import { useProjectList } from "./useProjectList";
+import { useProjects } from "./useProjects";
+import { useState } from "react";
+
 
 export const ProjectsPostItList = () => {
 
-  const {projects,currentProject,setCurrentProject} = useProjectList()
+  const {projects} = useProjects()
+  const [index,setIndex] = useState(0)
   
-  const handleProjectChange = (pro : IProjectPostIt) => {
-    setCurrentProject(pro)
+  
+
+  type ProjectColor = IProjectPostIt["color"]
+
+  const handleProjectColor = (projectIndex : number) : ProjectColor => {
+    if(projectIndex %2 === 0)
+      return "blue"
+
+    if(projectIndex %3 === 0)
+      return "pink"
+    
+    return "yellow"
   }
+
+  const handleProjectChange = (projectIndex : number) => {
+    setIndex(projectIndex)
+  }
+
+  const projectsToShow : IProjectPostIt[] = projects.map((m,index)=> {
+    const pro : IProjectPostIt = {
+      color : handleProjectColor(index),
+      ...m,
+    }
+    return pro
+  })
 
   return (
     <div className="flex items-start justify-center w-full">
       
       <ProjectPostIt 
         className="w-full h-72"
-        title={currentProject.title} 
-        description={currentProject.description}
-        color={currentProject.color} 
+        title={projectsToShow[index]?.title} 
+        description={projectsToShow[index]?.description}
+        color={projectsToShow[index]?.color} 
     />
       <ul>
-        {projects.map((m, index) => (
-          <li onClick={() => handleProjectChange(m)} key={index}>
+        {projectsToShow.map((m, index) => (
+          <li onClick={() => handleProjectChange(index)} key={index}>
             <PostIt color={m.color} />
           </li>
         ))}
