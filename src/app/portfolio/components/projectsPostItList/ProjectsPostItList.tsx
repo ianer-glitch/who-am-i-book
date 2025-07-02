@@ -3,6 +3,7 @@ import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
 import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/ProjectPostIt";
 import { useProjects } from "./useProjects";
 import { useState } from "react";
+import styles from "./projects-post-it-list.module.css"
 
 
 export const ProjectsPostItList = () => {
@@ -43,7 +44,7 @@ export const ProjectsPostItList = () => {
       />
       <ul>
         {projectsToShow.map((m, index) => (
-          <li onClick={() => handleProjectChange(index)} key={index}>
+          <li className={styles["sm-project-item"]} onClick={() => handleProjectChange(index)} key={index}>
             <PostIt color={m.color} />
           </li>
         ))}

@@ -1,0 +1,8 @@
+.sm-project-item{
+    transition: all .2s ease-in-out;
+}
+
+.sm-project-item:is(:hover,:active){
+    scale: 1.2;
+    cursor:pointer;
+}
