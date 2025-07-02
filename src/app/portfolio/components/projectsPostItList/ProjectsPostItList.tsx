@@ -30,6 +30,7 @@ export const ProjectsPostItList = () => {
     const pro : IProjectPostIt = {
       color : handleProjectColor(index),
       ...m,
+      
     }
     return pro
   })

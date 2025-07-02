@@ -82,3 +82,8 @@ h1,h2,h3,h4,p,label{
 body{
   background-color: var(--bg-color);
 }
+
+hr{
+  width: 100%;
+  color: var(--color-text);
+}

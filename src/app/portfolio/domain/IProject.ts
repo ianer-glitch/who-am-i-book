@@ -5,4 +5,6 @@ export interface IProject{
     repoBackEndLink?: string,
     publishedLink ?: string,
     desingLink?:string,
+    tecnologies: string[],
+    imageSrc?:string
 }

@@ -17,6 +17,8 @@ export const useProjects = () => {
         publishedLink: "a",
         repoBackEndLink: "a",
         repoFrontEndLink: "a",
+        tecnologies:["Angular",".Net","Docker","Mobile First","Atomic Desing","Hexagonal","Microsserviços","Comand Pattern"],
+        imageSrc:"/images/my-geladeira-remix-logo.svg"
       },
       {
         description: "a",
@@ -25,6 +27,7 @@ export const useProjects = () => {
         publishedLink: ".",
         repoBackEndLink: ".",
         repoFrontEndLink: ".",
+        tecnologies:[""]
       },
     ],
     enUs: [
@@ -35,6 +38,7 @@ export const useProjects = () => {
         publishedLink: ".",
         repoBackEndLink: ".",
         repoFrontEndLink: ".",
+        tecnologies:[]
       },
       {
         description: "a",
@@ -43,6 +47,7 @@ export const useProjects = () => {
         publishedLink: ".",
         repoBackEndLink: ".",
         repoFrontEndLink: ".",
+        tecnologies:[]
       },
     ],
   };

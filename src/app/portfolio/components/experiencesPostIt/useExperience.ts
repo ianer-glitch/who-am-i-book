@@ -35,6 +35,8 @@ export const useExperience = () => {
           "Vue.js",
           "React",
           "Angular",
+          "Atomic Desing",
+          "Mobile First"
         ],
       },
       {
@@ -50,6 +52,7 @@ export const useExperience = () => {
           "Arquitetura Limpa",
           "CQRS",
           "Microsserviços",
+          "Arquitetura Baseada em Feature (FBA)"
         ],
       },
       {
