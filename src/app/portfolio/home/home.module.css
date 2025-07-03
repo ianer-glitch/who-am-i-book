@@ -1,14 +1,16 @@
 .notebook {
+  --line-height: 1.52em;
   margin: 0 auto;
-  max-width: 1024px;
+  width: 100%;
+  max-width: 1600px;
   position: relative;  
   background-attachment: local;
   background-image:
   linear-gradient(to right, var(--bg-color) 0, transparent 0),
-  repeating-linear-gradient(var(--bg-color), var(--bg-color) 1.5em, var(--color-book-lines) 1.5em, var(--color-book-lines) 1.52em);
-  background-size: 100% 1.52em;
+  repeating-linear-gradient(var(--bg-color), var(--bg-color) 1.5em, var(--color-book-lines) 1.5em, var(--color-book-lines) var(--line-height));
+  background-size: 100% var(--line-height);
   
-  line-height: 1.52em;
+  line-height: var(--line-height);
   padding: 0.25em 1rem;
   display: flex;
   align-items: center;
@@ -16,6 +18,12 @@
   flex-direction: column;
   gap: 1.4rem;
   height: 100% !important;
- /* right-0 pl-4 pr-4 pt-9 top-0 gap-4 flex items-center justify-start flex-col w-full h-full */
   
+}
+
+@media (min-width : 1024px) {
+  .notebook{
+    --line-height: 1.62em;
+    gap: 1.2em;
+  }
 }
