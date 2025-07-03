@@ -1,8 +1,18 @@
 .sm-project-item{
     transition: all .2s ease-in-out;
+    filter: saturate(.5);
+
 }
 
 .sm-project-item:is(:hover,:active){
     scale: 1.2;
     cursor:pointer;
+}
+
+.sm-project-item-active{
+    opacity: 1;
+    scale: 1.1;
+    filter:saturate(1);
+   
+    
 }

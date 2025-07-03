@@ -1,26 +1,34 @@
-'use client'
+"use client";
 
-import { Geist, Geist_Mono,Londrina_Shadow,Nunito,Playwrite_US_Trad,Love_Ya_Like_A_Sister} from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Londrina_Shadow,
+  Nunito,
+  Playwrite_US_Trad,
+  Love_Ya_Like_A_Sister,
+} from "next/font/google";
 import "./globals.css";
-import 'primeicons/primeicons.css'
+import "primeicons/primeicons.css";
 import { useThemeStore } from "@/shared/state/useThemeStore";
 import { Header } from "./portfolio/components/header/Header";
+import { useEffect } from "react";
+import { useTranslation } from "@/shared/locales";
 
 const londrinaShadow = Londrina_Shadow({
-  variable:"--font-londrina-shadow",
-  subsets:["latin"],
-  weight:"400",
+  variable: "--font-londrina-shadow",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const nunito = Nunito({
-  variable:"--font-nunito"
-}) 
+  variable: "--font-nunito",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -29,23 +37,39 @@ const geistMono = Geist_Mono({
 
 const playwrite = Playwrite_US_Trad({
   variable: "--font-playwrite",
-})
+});
 
 const loveYaLikeASister = Love_Ya_Like_A_Sister({
-  variable:"--font-love-you",
-  weight:"400",
-  
-})
+  variable: "--font-love-you",
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const store = useThemeStore();
+  const { changeLanguage } = useTranslation();
 
-  const store = useThemeStore()
-  
-  
+  useEffect(() => {
+    const browserDefaultLanguage = navigator.language.toLowerCase();
+    if (browserDefaultLanguage == "ptbr") {
+      changeLanguage("ptBr");
+    } else {
+      changeLanguage("enUs");
+    }
+
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      store.setCurrentTheme("dark");
+    } else {
+      store.setCurrentTheme("dark");
+    }
+  }, []);
+
   return (
     <html lang="en">
       <body
@@ -59,8 +83,8 @@ export default function RootLayout({
             ${loveYaLikeASister.variable}
             
             antialiased  `}
-        >
-        <Header/>
+      >
+        <Header />
         {children}
       </body>
     </html>

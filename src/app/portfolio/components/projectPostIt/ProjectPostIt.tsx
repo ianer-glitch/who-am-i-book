@@ -1,5 +1,7 @@
+'use client'
 import { IconLinkButton } from "@/shared/components/atoms/iconLinkButton/IconLinkButton";
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
+import { useTranslation } from "@/shared/locales";
 import Image from "next/image";
 
 export interface IProjectPostIt {
@@ -12,15 +14,18 @@ export interface IProjectPostIt {
   color: "yellow" | "red" | "blue" | "green" | "pink";
   imageSrc?: string;
   tecnologies: string[];
+  
 }
 
 export const ProjectPostIt = (props: IProjectPostIt) => {
+  const {t} = useTranslation()
+
   return (
     <PostIt
-      className="w-full h-fit flex items-start flex-col justify-start gap-8"
+      className="w-full h-fit flex items-start flex-col justify-start gap-8  "
       color={props.color}
     >
-      <h1 style={{ fontFamily: "var(--font-nunito)" }}>Meus Projetos</h1>
+      <h1 style={{ fontFamily: "var(--font-nunito)" }}>{t("projectsPostItTitle")}</h1>
       <section className="w-full flex items-start flex-col justify-start gap-4 ">
         <h2 style={{ fontFamily: "var(--font-nunito)" }}>{props.title}</h2>
         <p className="bold" style={{ fontFamily: "var(--font-love-you)" }}>
@@ -54,7 +59,7 @@ export const ProjectPostIt = (props: IProjectPostIt) => {
                 icon="pi pi-github"
                 className="bg-white"
                 iconColor="!text-black"
-                text="Front end"
+                text="Front-end"
               />
             </li>
           )}
@@ -65,7 +70,7 @@ export const ProjectPostIt = (props: IProjectPostIt) => {
                 icon="pi pi-github"
                 iconColor="!text-black"
                 className="bg-white"
-                text="Back end"
+                text="Back-end"
               />
             </li>
           )}
@@ -87,7 +92,7 @@ export const ProjectPostIt = (props: IProjectPostIt) => {
                 icon="pi pi-globe"
                 iconColor="!text-black"
                 className="bg-white"
-                text="Publicado"
+                text={t("projectsPostItPublish")}
               />
             </li>
           )}

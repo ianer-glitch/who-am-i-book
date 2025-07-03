@@ -14,9 +14,12 @@ export const ProjectsPostItList = () => {
   type ProjectColor = IProjectPostIt["color"]
 
   const handleProjectColor = (projectIndex : number) : ProjectColor => {
-    if(projectIndex %2 === 0)
+    if(projectIndex === 0 || projectIndex %4 === 0)
       return "blue"
 
+    if(projectIndex %2 === 0)
+      return "green"
+    
     if(projectIndex %3 === 0)
       return "pink"
     
@@ -43,8 +46,8 @@ export const ProjectsPostItList = () => {
         {...projectsToShow[index]}
       />
       <ul>
-        {projectsToShow.map((m, index) => (
-          <li className={styles["sm-project-item"]} onClick={() => handleProjectChange(index)} key={index}>
+        {projectsToShow.map((m, pIndex) => (
+          <li className={`${styles["sm-project-item"]}  ${pIndex === index &&  styles["sm-project-item-active"]}`} onClick={() => handleProjectChange(pIndex)} key={pIndex}>
             <PostIt color={m.color} />
           </li>
         ))}
