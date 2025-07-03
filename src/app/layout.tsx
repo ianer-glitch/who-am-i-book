@@ -23,6 +23,7 @@ const londrinaShadow = Londrina_Shadow({
 
 const nunito = Nunito({
   variable: "--font-nunito",
+   subsets: ["latin"],
 });
 
 const geistSans = Geist({
@@ -37,11 +38,13 @@ const geistMono = Geist_Mono({
 
 const playwrite = Playwrite_US_Trad({
   variable: "--font-playwrite",
+  
 });
 
 const loveYaLikeASister = Love_Ya_Like_A_Sister({
   variable: "--font-love-you",
   weight: "400",
+  subsets: ["latin"],
 });
 
 export default function RootLayout({
