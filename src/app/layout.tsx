@@ -57,6 +57,7 @@ export default function RootLayout({
             ${store.currentTheme} 
             ${playwrite.variable}
             ${loveYaLikeASister.variable}
+            
             antialiased  `}
         >
         <Header/>

@@ -15,9 +15,9 @@ export default function Home() {
   const {dateToShow} = useDate()
 
   return (
-  <div className={style['notebook']}>
-    <p className="text-end text-sty" style={{fontFamily : "var(--font-playwrite)"}}>{dateToShow}</p>
-    <div className="absolute right-0 pl-4 pr-4 pt-9 top-0 gap-4 flex items-center justify-start flex-col w-full h-full">
+  
+    <div className={` ${style['notebook']}`}>
+    <p className="text-end w-full" style={{fontFamily : "var(--font-playwrite)"}}>{dateToShow}</p>
       <div className="w-full flex   items-end justify-end  gap-2">
         <LanguageButtons />
         <ThemeButtons/>
@@ -29,6 +29,6 @@ export default function Home() {
       <ProjectsPostItList/>
       <ExperiencesPostIt/>
     </div>
-  </div>
+  
   );
 }
