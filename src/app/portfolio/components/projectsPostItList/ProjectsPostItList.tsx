@@ -66,7 +66,7 @@ export const ProjectsPostItList = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2 }}
-          
+          className="w-full"
         >
           <ProjectPostIt
             {...projectsToShow[index]}
