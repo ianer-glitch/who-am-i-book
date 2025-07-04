@@ -3,6 +3,7 @@ import { IconLinkButton } from "@/shared/components/atoms/iconLinkButton/IconLin
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
 import { useTranslation } from "@/shared/locales";
 import Image from "next/image";
+import { MouseEventHandler } from "react";
 
 export interface IProjectPostIt {
   title: string;
@@ -14,6 +15,7 @@ export interface IProjectPostIt {
   color: "yellow" | "red" | "blue" | "green" | "pink";
   imageSrc?: string;
   tecnologies: string[];
+  onClick?:MouseEventHandler<HTMLButtonElement>
   
 }
 
@@ -24,6 +26,7 @@ export const ProjectPostIt = (props: IProjectPostIt) => {
     <PostIt
       className="w-full h-fit flex items-start flex-col justify-start gap-8  "
       color={props.color}
+      onClick={props.onClick}
     >
       <h1 style={{ fontFamily: "var(--font-nunito)" }}>{t("projectsPostItTitle")}</h1>
       <section className="w-full flex items-start flex-col justify-start gap-4 ">

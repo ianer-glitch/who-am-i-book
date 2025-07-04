@@ -2,7 +2,7 @@
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
 import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/ProjectPostIt";
 import { useProjects } from "./useProjects";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./projects-post-it-list.module.css"
 
 
@@ -10,6 +10,7 @@ export const ProjectsPostItList = () => {
 
   const {projects} = useProjects()
   const [index,setIndex] = useState(0)
+  const [autoProjectChange , setAutoProjectChange] = useState(true) 
 
   type ProjectColor = IProjectPostIt["color"]
 
@@ -28,6 +29,7 @@ export const ProjectsPostItList = () => {
 
   const handleProjectChange = (projectIndex : number) => {
     setIndex(projectIndex)
+    setAutoProjectChange(false)
   }
 
   const projectsToShow : IProjectPostIt[] = projects.map((m,index)=> {
@@ -39,10 +41,23 @@ export const ProjectsPostItList = () => {
     return pro
   })
 
+  useEffect(()=>{
+    if(autoProjectChange){
+      setTimeout(()=>{
+        if(index < projectsToShow.length -1){
+          setIndex(index+1)
+        }else{
+          setIndex(0)
+        }
+      },3000)
+    }
+  })
+
+
   return (
     <div className="flex items-start justify-center w-full">
       
-      <ProjectPostIt 
+      <ProjectPostIt onClick={()=>setAutoProjectChange(false)}
         {...projectsToShow[index]}
       />
       <ul>
