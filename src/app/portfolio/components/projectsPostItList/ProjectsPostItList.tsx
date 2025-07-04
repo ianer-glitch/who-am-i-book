@@ -54,7 +54,7 @@ export const ProjectsPostItList = () => {
         intervalRef.current = null;
       }
     };
-  }, [autoProjectChange, projectsToShow.length]);
+  });
 
   return (
     <div onClick={() => setAutoProjectChange(false)} className="flex items-start justify-center w-full">
