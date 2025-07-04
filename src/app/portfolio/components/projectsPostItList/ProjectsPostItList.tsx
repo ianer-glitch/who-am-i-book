@@ -2,7 +2,7 @@
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
 import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/ProjectPostIt";
 import { useProjects } from "./useProjects";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./projects-post-it-list.module.css";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -10,7 +10,8 @@ export const ProjectsPostItList = () => {
   const { projects } = useProjects();
   const [index, setIndex] = useState(0);
   const [autoProjectChange, setAutoProjectChange] = useState(true);
-
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  
   type ProjectColor = IProjectPostIt["color"];
 
   const handleProjectColor = (projectIndex: number): ProjectColor => {
@@ -38,18 +39,26 @@ export const ProjectsPostItList = () => {
 
   useEffect(() => {
     if (autoProjectChange) {
-      setTimeout(() => {
-        if (index < projectsToShow.length - 1) {
-          setIndex(index + 1);
-        } else {
-          setIndex(0);
+      intervalRef.current = setInterval(() => {
+        if(index < projectsToShow.length -1){
+          setIndex(index + 1)
+        }else{
+          setIndex(0)
         }
       }, 4000);
     }
-  });
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [autoProjectChange, projectsToShow.length]);
 
   return (
-    <div className="flex items-start justify-center w-full">
+    <div onClick={() => setAutoProjectChange(false)} className="flex items-start justify-center w-full">
+      
       <AnimatePresence mode="popLayout">
         <motion.div
           key={index}
@@ -57,9 +66,9 @@ export const ProjectsPostItList = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2 }}
+          
         >
           <ProjectPostIt
-            onClick={() => setAutoProjectChange(false)}
             {...projectsToShow[index]}
           />
         </motion.div>
