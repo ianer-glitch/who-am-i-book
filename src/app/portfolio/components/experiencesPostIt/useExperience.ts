@@ -13,6 +13,7 @@ export const useExperience = () => {
         title: "Back-end",
         experiences: [
           ".NET (2.2, 3.1, 5, 6, 8, 9)",
+          "SOLID",
           "C#",
           "RabbitMQ",
           "LINQ",
@@ -33,7 +34,7 @@ export const useExperience = () => {
           "Tailwind CSS",
           "TypeScript",
           "Vue.js",
-          "React",
+          "React.js",
           "Angular",
           "Atomic Desing",
           "Mobile First"
@@ -78,6 +79,7 @@ export const useExperience = () => {
         title: "Back-end",
         experiences: [
           ".NET (2.2, 3.1, 5, 6, 8, 9)",
+          "SOLID",
           "C#",
           "RabbitMQ",
           "LINQ",
@@ -98,7 +100,7 @@ export const useExperience = () => {
           "Tailwind CSS",
           "TypeScript",
           "Vue.js",
-          "React",
+          "React.js",
           "Angular",
         ],
       },
