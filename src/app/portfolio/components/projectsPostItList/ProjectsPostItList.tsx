@@ -44,19 +44,19 @@ export const ProjectsPostItList = () => {
         } else {
           setIndex(0);
         }
-      }, 3000);
+      }, 4000);
     }
   });
 
   return (
     <div className="flex items-start justify-center w-full">
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         <motion.div
           key={index}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1.2 }}
         >
           <ProjectPostIt
             onClick={() => setAutoProjectChange(false)}
