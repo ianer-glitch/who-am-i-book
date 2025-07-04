@@ -1,68 +1,78 @@
-'use client'
+"use client";
 import { PostIt } from "@/shared/components/atoms/postIt/PostIt";
 import { IProjectPostIt, ProjectPostIt } from "../projectPostIt/ProjectPostIt";
 import { useProjects } from "./useProjects";
 import { useEffect, useState } from "react";
-import styles from "./projects-post-it-list.module.css"
-
+import styles from "./projects-post-it-list.module.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const ProjectsPostItList = () => {
+  const { projects } = useProjects();
+  const [index, setIndex] = useState(0);
+  const [autoProjectChange, setAutoProjectChange] = useState(true);
 
-  const {projects} = useProjects()
-  const [index,setIndex] = useState(0)
-  const [autoProjectChange , setAutoProjectChange] = useState(true) 
+  type ProjectColor = IProjectPostIt["color"];
 
-  type ProjectColor = IProjectPostIt["color"]
+  const handleProjectColor = (projectIndex: number): ProjectColor => {
+    if (projectIndex === 0 || projectIndex % 4 === 0) return "blue";
 
-  const handleProjectColor = (projectIndex : number) : ProjectColor => {
-    if(projectIndex === 0 || projectIndex %4 === 0)
-      return "blue"
+    if (projectIndex % 2 === 0) return "green";
 
-    if(projectIndex %2 === 0)
-      return "green"
-    
-    if(projectIndex %3 === 0)
-      return "pink"
-    
-    return "yellow"
-  }
+    if (projectIndex % 3 === 0) return "pink";
 
-  const handleProjectChange = (projectIndex : number) => {
-    setIndex(projectIndex)
-    setAutoProjectChange(false)
-  }
+    return "yellow";
+  };
 
-  const projectsToShow : IProjectPostIt[] = projects.map((m,index)=> {
-    const pro : IProjectPostIt = {
-      color : handleProjectColor(index),
+  const handleProjectChange = (projectIndex: number) => {
+    setIndex(projectIndex);
+    setAutoProjectChange(false);
+  };
+
+  const projectsToShow: IProjectPostIt[] = projects.map((m, index) => {
+    const pro: IProjectPostIt = {
+      color: handleProjectColor(index),
       ...m,
-      
-    }
-    return pro
-  })
+    };
+    return pro;
+  });
 
-  useEffect(()=>{
-    if(autoProjectChange){
-      setTimeout(()=>{
-        if(index < projectsToShow.length -1){
-          setIndex(index+1)
-        }else{
-          setIndex(0)
+  useEffect(() => {
+    if (autoProjectChange) {
+      setTimeout(() => {
+        if (index < projectsToShow.length - 1) {
+          setIndex(index + 1);
+        } else {
+          setIndex(0);
         }
-      },3000)
+      }, 3000);
     }
-  })
-
+  });
 
   return (
     <div className="flex items-start justify-center w-full">
-      
-      <ProjectPostIt onClick={()=>setAutoProjectChange(false)}
-        {...projectsToShow[index]}
-      />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <ProjectPostIt
+            onClick={() => setAutoProjectChange(false)}
+            {...projectsToShow[index]}
+          />
+        </motion.div>
+      </AnimatePresence>
       <ul>
         {projectsToShow.map((m, pIndex) => (
-          <li className={`${styles["sm-project-item"]}  ${pIndex === index &&  styles["sm-project-item-active"]}`} onClick={() => handleProjectChange(pIndex)} key={pIndex}>
+          <li
+            className={`${styles["sm-project-item"]}  ${
+              pIndex === index && styles["sm-project-item-active"]
+            }`}
+            onClick={() => handleProjectChange(pIndex)}
+            key={pIndex}
+          >
             <PostIt color={m.color} />
           </li>
         ))}
