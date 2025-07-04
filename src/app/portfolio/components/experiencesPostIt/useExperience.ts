@@ -69,7 +69,7 @@ export const useExperience = () => {
         ],
       },
       {
-        title: "Atualmente estudando",
+        title: "Atualmente Estudando",
         experiences: ["React.js", "Next.js"],
       },
     ],
