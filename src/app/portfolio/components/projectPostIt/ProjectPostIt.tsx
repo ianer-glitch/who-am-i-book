@@ -54,6 +54,7 @@ export const ProjectPostIt = (props: IProjectPostIt) => {
           ))}
         </ul>
         <hr />
+        <h3>Links:</h3>
         <ul className=" flex flex-wrap items-start justify-start  gap-4 w-full ">
           {props.repoFrontEndLink && (
             <li>
