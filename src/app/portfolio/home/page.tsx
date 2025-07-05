@@ -17,7 +17,7 @@ export default function Home() {
   return (
   
     <div className={` ${style['notebook']}`}>
-    <p className="text-end w-full" style={{fontFamily : "var(--font-playwrite)"}}>{dateToShow}</p>
+    <p className="text-end w-full theme-text" style={{fontFamily : "var(--font-playwrite)"}}>{dateToShow}</p>
       <div className="w-full flex   items-end justify-end  gap-2">
         <LanguageButtons />
         <ThemeButtons/>
@@ -25,7 +25,7 @@ export default function Home() {
       <section className="w-full flex items-center justify-between">
       <ProfilePostIt/>
       </section>
-      <p style={{fontFamily:"var(--font-nunito)"}}>{t("homeAbout")}</p>
+      <p className="theme-text" style={{fontFamily:"var(--font-nunito)"}}>{t("homeAbout")}</p>
       <ProjectsPostItList/>
       <ExperiencesPostIt/>
     </div>
