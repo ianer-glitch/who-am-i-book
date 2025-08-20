@@ -42,7 +42,7 @@ export const useExperience = () => {
       },
       {
         title: "Cloud & CI/CD",
-        experiences: ["GitHub Actions", "GitLab CI", "Azure", "Azure DevOps"],
+        experiences: ["GitHub", "GitLab", "Azure", "Azure DevOps"],
       },
       {
         title: "Arquiteturas",
@@ -106,7 +106,7 @@ export const useExperience = () => {
       },
       {
         title: "Cloud & CI/CD",
-        experiences: ["GitHub Actions", "GitLab CI", "Azure", "Azure DevOps"],
+        experiences: ["GitHub", "GitLab", "Azure", "Azure DevOps"],
       },
       {
         title: "Architectures",
